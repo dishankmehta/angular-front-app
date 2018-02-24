@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8">
+      <section>
+        <header class="header">
+          <div><h1>Screens</h1></div>
+        </header>
+      </section>
+
+      <section class="main">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Screen Title</th>
+              <th>Screen Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of screens">
+              <td scope="row">{{item.id}}</td>
+              <td>{{item.screenTitle}}</td>
+              <td>{{item.screenData}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="showScreen(item.id)">Edit/Show</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </div>
+
+</div>

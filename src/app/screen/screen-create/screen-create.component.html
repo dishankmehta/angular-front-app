@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="col-md-8">
+    <!--<div *ngIf="screen">-->
+      <section class="main">
+        <div class="row">
+          {{screen?.id}} |
+          {{screen?.screenTitle}} |
+          {{screen?.screenData}} |
+        </div>
+      </section>
+
+      <section *ngIf="screen">
+        <form method="post">
+          <div class="form-group">
+            <label for="id">ID: </label>
+            <input type="text" class="form-control" #id id="id" [(ngModel)] = "screen.id" name="id"
+             (keyup)="emitChange()">
+          </div>
+          <div class="form-group">
+            <label for="screenTitle">Screen Title: </label>
+            <input type="text" class="form-control" #screenTitle id="screenTitle" [(ngModel)] = "screen.screenTitle"
+                   name="screenTitle"
+                   (keyup)="emitChange()" >
+          </div>
+          <div class="form-group">
+            <label for="screenData">Screen Data: </label>
+            <input type="text" class="form-control" #screenData id="screenData" name="screenData" [(ngModel)] = "screen.screenData"
+                   (keyup)="emitChange()">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" (click)="updateScreen(screen)">Update</button>
+          </div>
+        </form>
+      </section>
+
+    <!--</div>-->
+
+  </div>
+
+</div>
